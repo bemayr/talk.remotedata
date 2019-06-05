@@ -4,7 +4,7 @@
 </div>
 <br />
 
-![frontpage](frontpage.png)
+![frontpage](frontpage.jpg)
 
 > Materials for my talk about a type-safe model for data-fetching called RemoteData, mainly based on [How Elm slays a UI Antipattern](http://blog.jenkster.com/2016/06/how-elm-slays-a-ui-antipattern.html) and the following articles. 
 
