@@ -26,9 +26,8 @@ export function fold<TResult, TError, TSuccess>(
   initialized: () => TResult,
   pending: () => TResult,
   failure: (error: TError) => TResult,
-  success: (data: TSuccess) => TResult
-): (state: RemoteData<TError, TSuccess>) => TResult {
-  return (state: RemoteData<TError, TSuccess>) => {
+  success: (data: TSuccess) => TResult,
+  state: RemoteData<TError, TSuccess>): TResult {
     switch (state.kind) {
       case "initialized":
         return initialized();
@@ -40,7 +39,6 @@ export function fold<TResult, TError, TSuccess>(
         return success(state.data);
       default:
         return state as never; // exhaustive TypeScript switch: https://github.com/basarat/typescript-book/blob/master/docs/types/discriminated-unions.md#switch
-    }
   };
 }
 
